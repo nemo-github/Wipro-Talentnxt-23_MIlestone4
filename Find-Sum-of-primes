@@ -1,0 +1,54 @@
+Find sum of all prime numbers in the array, except the smallest prime number:
+
+Madhav has been assigned the task of finding the sum of all numbers a given array, except the smallest prime number in the array. Madhav approaches you to 
+help him do this by writing a program Given an array of numbers, you are expected to find the sum of all prime numbers in the given array. You must however 
+exclude the smallest prime
+
+number while performing this addition.
+
+For Example -
+
+If input1-(10,41,18,50,43,31,29,25,59,96,67) representing the given array and
+
+Input2 = 11 representing the number of elements in the array. then the expected output is 241, which is the sum of all prime numbers in this array except 
+the smallest prime number 29. Explanation: The prime numbers in this array are 41, 43, 31, 29, 59 and 67.
+
+The smallest prime number in this array is 29.
+
+So, let us leave out 29 and add all the other prime numbers to get the output
+
+Therefore, output = 41+43+31+59+67 = 241
+
+Special conditions to be taken care:
+
+Note: If the array does NOT contain any prime number, the output should be the sum of all numbers in the array except the lowest number. For example, if 
+input1=(10,20,30,40) and input2 = 4 representing the number of elements in the array, then the expected output = 20+30+40=90.
+
+
+CODE:
+
+import java.io.*;
+import java.util.*;
+
+class UserMainCode{
+  public int findSumOfPrimes(int[] input1, input2){
+    int sum=0;
+    List<Integer> li=new ArrayList<>();
+    for(int i=0;i<input2;i++){
+      if(prime(input1[i])){
+        li.add(input1[i]);
+      }
+    }
+    Collections.sort(li);
+    for(int i=1;i<li.size();i++){
+      sum=sum+li.get(i);
+    }
+    Arrays.sort(input1);
+      if(sum==0){
+        for(int i=1;i<input2;i++){
+          sum=sum+input1[i];
+        }
+      }
+      return sum;
+  }
+}
